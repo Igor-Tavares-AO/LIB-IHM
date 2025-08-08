@@ -1,0 +1,286 @@
+/* Estilos base */
+:root {
+    --cor-primaria: #4285f4;
+    --cor-texto: #333;
+    --cor-fundo: #f8f9fa;
+    --cor-borda: #ddd;
+    --espacamento: 1rem;
+    --borda-arredondada: 8px;
+}
+
+[data-tema="escuro"] {
+    --cor-primaria: #4a6baf;
+    --cor-texto: #f8f9fa;
+    --cor-fundo: #343a40;
+    --cor-borda: #495057;
+}
+/* Adicione isso ao seu arquivo styles.css */
+
+/* Ajuste para o cabeçalho principal */
+.cabecalho {
+    margin-top: 40px; /* Altura aproximada da navbar */
+    background-color: var(--cor-primaria);
+    color: white;
+    padding: var(--espacamento);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Ou melhor ainda, adicione uma classe específica para a navbar fixa */
+.lib-ihm-navbar.fixo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    /* Adicione uma altura fixa se necessário */
+    height: 60px;
+}
+
+/* E ajuste o padding do body para evitar que o conteúdo fique escondido */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--cor-texto);
+    background-color: var(--cor-fundo);
+    margin: 0;
+    padding-top: 60px; /* Igual à altura da navbar */
+    transition: all 0.3s ease;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--cor-texto);
+    background-color: var(--cor-fundo);
+    margin: 0;
+    padding: 0;
+    transition: all 0.3s ease;
+}
+
+/* Layout */
+.cabecalho {
+    background-color: var(--cor-primaria);
+    color: white;
+    padding: var(--espacamento);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tema-container {
+    display: flex;
+    gap: var(--espacamento);
+}
+
+.conteudo-principal {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--espacamento);
+}
+
+.secao {
+    margin-bottom: calc(var(--espacamento) * 2);
+}
+
+.rodape {
+    text-align: center;
+    padding: var(--espacamento);
+    background-color: var(--cor-primaria);
+    color: white;
+}
+
+/* Componentes personalizados */
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--espacamento);
+}
+
+.formulario {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.formulario-acoes {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: var(--espacamento);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .cabecalho {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .cards-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Estilos para novos componentes */
+
+/* Botão e Grupo de Botões */
+.lib-ihm-grupo-botoes {
+    display: flex;
+    gap: 8px;
+    margin: 10px 0;
+}
+
+.lib-ihm-grupo-botoes.vertical {
+    flex-direction: column;
+}
+
+/* Tabela */
+.lib-ihm-tabela {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0;
+}
+
+.lib-ihm-tabela th, 
+.lib-ihm-tabela td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid var(--lib-ihm-cor-borda);
+}
+
+.lib-ihm-tabela th {
+    background-color: var(--lib-ihm-secundaria);
+    font-weight: 500;
+}
+
+.lib-ihm-tabela tr:hover {
+    background-color: var(--lib-ihm-cor-fundo-hover);
+}
+
+/* Breadcrumb */
+.lib-ihm-breadcrumb ol {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 16px 0;
+}
+
+.lib-ihm-breadcrumb li {
+    margin-right: 8px;
+}
+
+.lib-ihm-breadcrumb li:after {
+    content: '/';
+    margin-left: 8px;
+    color: var(--lib-ihm-cor-texto-clara);
+}
+
+.lib-ihm-breadcrumb li:last-child:after {
+    content: none;
+}
+
+.lib-ihm-breadcrumb li.ativo {
+    color: var(--lib-ihm-primaria);
+    font-weight: 500;
+}
+
+.lib-ihm-breadcrumb a {
+    color: var(--lib-ihm-cor-texto);
+    text-decoration: none;
+}
+
+.lib-ihm-breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+/* Barra de Navegação */
+.lib-ihm-navbar {
+    background-color: var(--lib-ihm-primaria);
+    color: white;
+    padding: 0 16px;
+}
+
+.lib-ihm-navbar.fixo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.lib-ihm-navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.lib-ihm-navbar-titulo {
+    font-size: 1.2em;
+    font-weight: 500;
+    padding: 16px 0;
+}
+
+.lib-ihm-navbar-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.lib-ihm-navbar-links li {
+    margin-left: 16px;
+}
+
+.lib-ihm-navbar-links a {
+    color: white;
+    text-decoration: none;
+    padding: 16px 0;
+    display: block;
+    position: relative;
+}
+
+.lib-ihm-navbar-links a:hover {
+    opacity: 0.8;
+}
+
+/* Tabs */
+.lib-ihm-tabs {
+    margin: 16px 0;
+}
+
+.lib-ihm-tabs-header {
+    display: flex;
+    border-bottom: 1px solid var(--lib-ihm-cor-borda);
+}
+
+.lib-ihm-tabs-botao {
+    padding: 12px 16px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 0.9em;
+    position: relative;
+    color: var(--lib-ihm-cor-texto-clara);
+}
+
+.lib-ihm-tabs-botao.ativo {
+    color: var(--lib-ihm-primaria);
+    font-weight: 500;
+}
+
+.lib-ihm-tabs-botao.ativo:after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: var(--lib-ihm-primaria);
+}
+
+.lib-ihm-tabs-painel {
+    padding: 16px 0;
+    display: none;
+}
